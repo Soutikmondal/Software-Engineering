@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipient Request Form</title>
+    <link rel="stylesheet" href="Req_style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Recipient Request Form</h2>
+        <form id="recipientForm" action="Recipient_req.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="bloodType">Blood Type:</label>
+            <select id="bloodType" name="bloodType" required>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+          
+          
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <label for="user_name">User name:</label>
+            <textarea id="user_name" name="user_name" required></textarea>
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

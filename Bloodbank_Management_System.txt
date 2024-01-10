@@ -1,0 +1,107 @@
+                                                                            TABLE CREATION
+
+CREATE TABLE Recipients (
+    RID INTEGER PRIMARY KEY,
+    Name TEXT,
+    Blood_Type ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
+    Quantity INTEGER,
+    Priority TEXT,
+    Contact TEXT,
+    Address TEXT
+);
+
+CREATE TABLE BloodBank (
+    BID INTEGER PRIMARY KEY,
+    Name VARCHAR(255),
+    Address VARCHAR(255),
+    Contact VARCHAR(255)
+);
+
+CREATE TABLE BloodAvailable (
+    BID INTEGER,
+    Blood_Type ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
+    Quantity INTEGER,
+    PRIMARY KEY (BID, Blood_Type),
+    FOREIGN KEY (BID) REFERENCES BloodBank(BID)
+);
+
+CREATE TABLE DispatchLogs (
+    RID INTEGER,
+    Blood_Type ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
+    Quantity INTEGER,
+    PRIMARY KEY (RID, Blood_Type),
+    FOREIGN KEY (RID) REFERENCES Recipients(RID)
+);
+
+CREATE TABLE PendingRequests (
+    RID INTEGER,
+    Blood_Type ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
+    Quantity INTEGER,
+    PRIMARY KEY (RID, Blood_Type),
+    FOREIGN KEY (RID) REFERENCES Recipients(RID)
+);
+
+                                                                         INSERTION OF VALUES
+
+
+INSERT INTO Recipients (RID, Name, Blood_Type, Quantity, Priority, Contact, Address) VALUES (1001, 'John Doe', 'O+', 2, 'High', 'john.doe@example.com', '123 Main Street');
+INSERT INTO Recipients (RID, Name, Blood_Type, Quantity, Priority, Contact, Address) VALUES (2002, 'Jane Smith', 'A-', 4, 'Medium', 'jane.smith@example.com', '456 Oak Avenue');
+INSERT INTO Recipients (RID, Name, Blood_Type, Quantity, Priority, Contact, Address) VALUES (3003, 'Bob Johnson', 'B+', 3, 'High', 'bob.johnson@example.com', '789 Pine Street');
+INSERT INTO Recipients (RID, Name, Blood_Type, Quantity, Priority, Contact, Address) VALUES (4004, 'Alice Williams', 'AB-', 5, 'Low', 'alice.williams@example.com', '101 Elm Road');
+INSERT INTO Recipients (RID, Name, Blood_Type, Quantity, Priority, Contact, Address) VALUES (5005, 'David Miller', 'O-', 1, 'Medium', 'david.miller@example.com', '202 Maple Avenue');
+
+INSERT INTO BloodBank (BID, Name, Address, Contact) VALUES (3003, 'Mumbai Blood Bank', '123 Gandhi Street', 'contact@mumbaibloodbank.com');
+INSERT INTO BloodBank (BID, Name, Address, Contact) VALUES (2002, 'Kolkata Blood Center', 'ABC, Saltlake', 'kolkata.bloodcenter@example.com');
+INSERT INTO BloodBank (BID, Name, Address, Contact) VALUES (3003, 'Delhi Blood Services', 'XYZ Road', 'delhi.bloodservices@example.com');
+INSERT INTO BloodBank (BID, Name, Address, Contact) VALUES (4004, 'Chennai Blood Center', '456 Main Street', 'chennai.bloodcenter@example.com');
+INSERT INTO BloodBank (BID, Name, Address, Contact) VALUES (5005, 'Hyderabad Blood Bank', 'LMN Avenue', 'hyderabad.bloodbank@example.com');
+
+-- Inserting data for BID 2002
+INSERT INTO BloodAvailable (BID, Blood_Type, Quantity)
+VALUES
+    (2002, 'A+', 15),
+    (2002, 'A-', 20),
+    (2002, 'B+', 12),
+    (2002, 'B-', 18),
+    (2002, 'AB+', 25),
+    (2002, 'AB-', 30),
+    (2002, 'O+', 14),
+    (2002, 'O-', 22);
+
+-- Inserting data for BID 3003
+INSERT INTO BloodAvailable (BID, Blood_Type, Quantity)
+VALUES
+    (3003, 'A+', 17),
+    (3003, 'A-', 23),
+    (3003, 'B+', 14),
+    (3003, 'B-', 19),
+    (3003, 'AB+', 28),
+    (3003, 'AB-', 33),
+    (3003, 'O+', 16),
+    (3003, 'O-', 24);
+
+-- Inserting data for BID 4004
+INSERT INTO BloodAvailable (BID, Blood_Type, Quantity)
+VALUES
+    (4004, 'A+', 13),
+    (4004, 'A-', 18),
+    (4004, 'B+', 11),
+    (4004, 'B-', 16),
+    (4004, 'AB+', 22),
+    (4004, 'AB-', 27),
+    (4004, 'O+', 12),
+    (4004, 'O-', 20);
+
+-- Inserting data for BID 5005
+INSERT INTO BloodAvailable (BID, Blood_Type, Quantity)
+VALUES
+    (5005, 'A+', 19),
+    (5005, 'A-', 25),
+    (5005, 'B+', 16),
+    (5005, 'B-', 21),
+    (5005, 'AB+', 30),
+    (5005, 'AB-', 35),
+    (5005, 'O+', 18),
+    (5005, 'O-', 26);
+
+
