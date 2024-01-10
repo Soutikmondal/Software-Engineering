@@ -44,10 +44,16 @@ button {
 }
 
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
         <h1>Blood Bank Management System</h1>
+        <div class="notification">
+            <i class="fas fa-bell"></i>
+        </div>
+
         <div class="buttons">
             <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Place_Request/Recipient_Request.html')">Place Request</button>
             <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Track_Request/track_request.html')">Track Request</button>
@@ -57,9 +63,15 @@ button {
     </div>
 
     <script >
-        function redirectTo(page) {
+     function redirectTo(page) {
     window.location.href = page;
 }
+
+document.querySelector('.notification').addEventListener('click', function () {
+    // Add your notification handling code here
+    alert('Showing notifications!');
+});
+
 
     </script>
 </body>
