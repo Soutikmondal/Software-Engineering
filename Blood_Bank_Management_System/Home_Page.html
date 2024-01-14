@@ -10,6 +10,10 @@
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -20,6 +24,9 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    background: linear-gradient(to bottom right, red, white);
+   
+  
 }
 
 h1 {
@@ -36,29 +43,44 @@ button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    margin: 5px;
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 10px;
+    
 }
+button:hover{
+    background-color: rgb(31, 148, 39);
+    
+}
+
 #Logout{
     width: 50%;
     background-color: red;
 }
 
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
 
 </head>
 <body>
     <div class="container">
         <h1>Blood Bank Management System</h1>
-        <div class="notification">
-            <i class="fas fa-bell"></i>
-        </div>
+        
 
         <div class="buttons">
             <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Place_Request/Recipient_Request.html')">Place Request</button>
             <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Track_Request/track_request.html')">Track Request</button>
+            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Medical_Record/medical_record.html')">Medical Record</button>
+            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Feedback/feedback.html')">Feedback</button>
+            
             <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Cancel_Request/cancel_request.html')">Cancel Request</button>
             <button id="Logout" onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Register_Page.html')">Logout</button>
+
+        
         </div>
     </div>
 
@@ -71,6 +93,21 @@ document.querySelector('.notification').addEventListener('click', function () {
     // Add your notification handling code here
     alert('Showing notifications!');
 });
+
+    var myIndex = 0;
+   carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
 
 
     </script>

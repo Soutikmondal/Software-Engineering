@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Record</title>
+    <link rel="stylesheet" href="Req_style.css">
+
+    <style>
+        .container{
+            background: linear-gradient(to bottom right, orange, red);
+        }
+        body{
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Record</h1>
+        <div class="notification">
+            <i class="fas fa-bell"></i>
+        </div>
+
+        <div class="buttons">
+            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Enter_Record/enter.html')">Enter Record</button>
+            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/View_Record/view.html')">View Record</button>
+            
+        </div>
+    </div>
+
+    <script >
+     function redirectTo(page) {
+    window.location.href = page;
+}
+
+document.querySelector('.notification').addEventListener('click', function () {
+    // Add your notification handling code here
+    alert('Showing notifications!');
+});
+
+
+    </script>
+</body>
+</html>

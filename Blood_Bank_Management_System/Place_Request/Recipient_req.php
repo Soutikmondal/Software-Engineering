@@ -58,6 +58,7 @@ $sql->close();
     $result = $checkAvailabilityStmt->get_result();
     if ($result->num_rows > 0) {
         // Blood type and quantity are available, insert into DispatchLogs
+      
         $insertDispatchQuery = "INSERT INTO DispatchLogs (RID,RequestID, Blood_Type, Quantity) VALUES (?,?, ?, ?)";
         $insertDispatchStmt = $conn->prepare($insertDispatchQuery);
         $insertDispatchStmt->bind_param("iiss",$rid, $reqid, $bloodType, $quantity);
@@ -75,9 +76,9 @@ echo"Dispatch error".$insertDispatchStmt->error;
        
     }else {
         // Blood type and/or quantity not available, insert into PendingRequests
-        $insertPendingQuery = "INSERT INTO PendingRequests (RID, RequestID, Blood_Type, Quantity) VALUES (?, ?, ?)";
+        $insertPendingQuery = "INSERT INTO PendingRequests (RID, RequestID, Blood_Type, Quantity) VALUES (?, ?, ?,?)";
         $insertPendingStmt = $conn->prepare($insertPendingQuery);
-        $insertPendingStmt->bind_param("iss", $rid,$reqid, $bloodType, $quantity);
+        $insertPendingStmt->bind_param("iiss", $rid,$reqid, $bloodType, $quantity);
        if( $insertPendingStmt->execute()==false) {
         echo"Dispatch error". $insertPendingStmt->error;
        }

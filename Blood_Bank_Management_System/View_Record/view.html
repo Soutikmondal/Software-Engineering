@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Record View</title>
+    <link rel="stylesheet" href="Req_style.css">
+
+    <style>
+        .container{
+            background: linear-gradient(to bottom right, red, white);
+        }
+        body{
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> Medical Record View</h2>
+        <form id="medicalviewForm" action="Medical_view.php" method="POST">
+            <label for="username">Enter your Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+</body>
+</html>

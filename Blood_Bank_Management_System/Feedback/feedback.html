@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback form</title>
+    <link rel="stylesheet" href="Req_style.css">
+
+    <style>
+        .container{
+            background: linear-gradient(to bottom right, violet, purple);
+        }
+        body{
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> Feedback Input Form</h2>
+        <form id="feedbackForm" action="feedback.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="requestid">Request ID:</label>
+            <input type="number" id="requestid" name="requestid" required>
+
+
+            <label for="feedbacktext">Feedback Text:</label>
+            <input type="text" id="feedbacktext" name="feedbacktext" required>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>

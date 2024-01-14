@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipient Request Form</title>
     <link rel="stylesheet" href="Req_style.css">
+
+    <style>
+
+        body{
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container{
+            background: linear-gradient(to bottom right, red, white);
+        }
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -40,10 +54,15 @@
             <label for="password">password:</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">Submit Request</button>
+            <button type="submit" onclick="show_alert()">Submit Request</button>
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script >
+function show_alert(){
+    alert("Successfully submitted");
+}
+
+    </script>
 </body>
 </html>
