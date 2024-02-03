@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipient Registration</title>
+    <style>
+      /* Heading */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(255, 255, 255);
+        margin: 0;
+        padding: 0;
+      }
+      #top {
+        display: flex;
+        flex-direction: row;
+      }
+      #logo {
+        width: 7%;
+        height: 18%;
+        margin-right: 20px;
+        margin-top: 15px;
+        margin-left: 20px;
+      }
+      #wb_logo {
+        width: 10%;
+        margin-right: 20px;
+        margin-left: auto;
+      }
+      #heading {
+        margin-top: 15px;
+      }
+      #title_bar {
+        display: flex;
+        flex-direction: row;
+        background-color: red;
+        align-items: center;
+        margin: 5px;
+        border-radius: 5px;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+      }
+
+      #title_bar a {
+        padding: 0px 20px;
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #title_bar a:hover {
+        color: black;
+      }
+      #heading h1 {
+        color: red;
+        margin-bottom: 0px;
+      }
+      #heading h2 {
+        font-weight: normal;
+        margin-top: 10px;
+      }
+
+      /* Register form */
+
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background: linear-gradient(to bottom right, white, blue);
+      }
+
+      .container h2 {
+        color: #3498db;
+        text-align: center;
+      }
+
+      .container label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #333;
+      }
+
+      .container input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .container button {
+        width: 100%;
+        padding: 12px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .container button:hover {
+        background-color: #2980b9;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        margin-top: 5px;
+      }
+
+      .go-home {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .go-home a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 16px;
+        border-radius: 5px;
+        background-color: #3498db;
+        transition: background-color 0.3s ease;
+      }
+
+      .go-home a:hover {
+        background-color: #2980b9;
+      }
+      /* FOOTER */
+      #footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        border-radius: 5px;
+        margin: 2px;
+      }
+      #footer p {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="top">
+        <img
+          id="logo"
+          src="/Blood_Bank_Management_System/images/blood_logo.png"
+          alt="Error"
+        />
+
+        <div id="heading">
+          <h1>Blood Bank Management System</h1>
+          <h2>Government of West Bengal</h2>
+        </div>
+
+        <img
+          id="wb_logo"
+          src="/Blood_Bank_Management_System/images/wb_logo.png"
+          alt="Error"
+        />
+      </div>
+      <div id="title_bar">
+        <a
+          href="#"
+          onclick="show_alert()"
+          >Home</a
+        >
+
+        <a href="">Contact Us</a>
+        <a href="">Manual</a>
+        <a href="">About Us</a>
+      </div>
+    </header>
+    <div class="container">
+      <h2>Recipient Registration</h2>
+      <form
+        id="registrationForm"
+        action="registration_process.php"
+        method="post"
+      >
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="bloodType">Blood Type:</label>
+        <select id="bloodType" name="bloodType" required>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="text" id="contactNumber" name="contactNumber" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        />
+
+        <button type="button" onclick="validateForm()">Register</button>
+      </form>
+    </div>
+    <footer>
+      <div id="footer">
+        <p>
+          Copyright © 2024,Designed & Developed by Soutik Mondal, Dept. of CSE,
+          University of Calcutta. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      function validateForm() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match. Please re-enter.");
+        } else {
+          document.getElementById("registrationForm").submit();
+        }
+      }
+      function show_alert(){
+        alert("You must Register First!!!")
+        
+      }
+    </script>
+  </body>
+</html>

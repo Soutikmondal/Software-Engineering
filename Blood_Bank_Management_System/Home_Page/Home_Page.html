@@ -1,115 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Bank Management System</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(255, 255, 255);
+        margin: 0;
+        padding: 0;
+      }
+      #top {
+        display: flex;
+        flex-direction: row;
+      }
+      #logo {
+        width: 7%;
+        height: 18%;
+        margin-right: 20px;
+        margin-top: 15px;
+        margin-left: 20px;
+      }
+      #wb_logo {
+        width: 10%;
+        margin-right: 20px;
+        margin-left: auto;
+      }
+      #heading {
+        margin-top: 15px;
+      }
+      #title_bar {
+        display: flex;
+        flex-direction: row;
+        background-color: red;
+        align-items: center;
+        margin: 5px;
+        border-radius: 5px;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+      }
 
-    background-image: url(bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+      #title_bar a {
+        padding: 0px 20px;
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      #title_bar a:hover {
+        color: black;
+      }
+      #heading h1 {
+        color: red;
+        margin-bottom: 0px;
+       
+      }
+      #heading h2 {
+        font-weight: normal;
+        margin-top: 10px;
+      }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    background: linear-gradient(to bottom right, red, white);
-   
+      /* Cards */
+
+      #card_cont {
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid black;
+        gap: 10vh 50vh;
+        margin: 0 20vh;
+        padding: 5vh 10vh;
+        justify-content: center;
+      }
+
+      /* FOOTER */
+      #footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        border-radius: 5px;
+        margin: 2px;
+      }
+      #footer p {
+        color: white;
+      }
+
+
+      /* RESPONSIVE */
+      @media (width<800px) {
+  
+  #heading h1{
+    font-size: 20px;
+  }
+  #heading h2{
+    font-size: 10px;
+  }
+  #logo{
+    margin-top: 0px;
+    height: 40px;
+    width: 40px;
+    
+  }
+  #top{
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+#wb_logo{
+  width: 80px;
+  margin-right: 2px;
   
 }
-
-h1 {
-    color: #333;
+#title_bar{
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
 }
-
-.buttons {
-    margin-top: 20px;
+#title{
+  margin-left: 0%;
+  padding-left: 0;
 }
-
-button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 10px auto;
-    width: 50%;
-    border-radius: 10px;
-    
+#title a{
+  font-size: 14px;
 }
-button:hover{
-    background-color: rgb(31, 148, 39);
-    
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 5px;
+  border: 1px solid brown;
+  border-radius: 5px;
+  padding: 1%;
+  height: 290px;
 }
-
-#Logout{
-    width: 50%;
-    background-color: red;
+#card_cont{
+  margin: 10px;
+  border: 2px solid brown;
+  border-radius: 5px;
 }
-
-.buttons{
-    display: flex;
-    flex-direction: column;
+#footer{
+  padding: 5px;
 }
-    </style>
-   
-
-</head>
-<body>
-    <div class="container">
-        <h1>Blood Bank Management System</h1>
-        
-
-        <div class="buttons">
-            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Place_Request/Recipient_Request.html')">Place Request</button>
-            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Track_Request/track_request.html')">Track Request</button>
-            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Medical_Record/medical_record.html')">Medical Record</button>
-            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Feedback/feedback.html')">Feedback</button>
-            
-            <button onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Cancel_Request/cancel_request.html')">Cancel Request</button>
-            <button id="Logout" onclick="redirectTo('http://localhost/Blood_Bank_Management_System/Register_Page.html')">Logout</button>
-
-        
-        </div>
-    </div>
-
-    <script >
-     function redirectTo(page) {
-    window.location.href = page;
+#footer p{
+  font-size: 10px;
+  text-align: center;
+margin-bottom: 0;
 }
-
-document.querySelector('.notification').addEventListener('click', function () {
-    // Add your notification handling code here
-    alert('Showing notifications!');
-});
-
-    var myIndex = 0;
-   carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
   }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="top">
+        <img
+          id="logo"
+          src="/Blood_Bank_Management_System/images/blood_logo.png"
+          alt="Error"
+        />
 
+        <div id="heading">
+          <h1>Blood Bank Management System</h1>
+          <h2>Government of West Bengal</h2>
+        </div>
 
-    </script>
-</body>
+        <img
+          id="wb_logo"
+          src="/Blood_Bank_Management_System/images/wb_logo.png"
+          alt="Error"
+        />
+      </div>
+      <div id="title_bar">
+        <a
+          href=""
+          style="
+            background-color: rgb(53, 85, 230);
+            border-radius: 10px;
+            padding: 5px 5px;
+          "
+          >Home</a
+        >
+
+        <a href="http://localhost/Blood_Bank_Management_System/Contact_Us/contact.html">Contact Us</a>
+        <a href="http://localhost/Blood_Bank_Management_System/Manual/manual.html">Manual</a>
+        <a
+          href="http://localhost/Blood_Bank_Management_System/Home_Page/Landing_Page.html"
+          >Logout</a
+        >
+      </div>
+    </header>
+
+    <div id="card_cont">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/Blood_Bank_Management_System/images/Blood-Donation-Logo.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Place Blood Request</h5>
+          <!-- <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p> -->
+          <a
+            href="http://localhost/Blood_Bank_Management_System/Place_Request/Recipient_Request.html"
+            class="btn btn-primary"
+            >Click here</a
+          >
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="/Blood_Bank_Management_System/images/download.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Track Your Request</h5>
+          <!-- <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p> -->
+          <a
+            href="http://localhost/Blood_Bank_Management_System/Track_Request/track_request.html"
+            class="btn btn-primary"
+            >Click here</a
+          >
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="/Blood_Bank_Management_System/images/blood-censor-2187013-1830093.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Cancel Request</h5>
+          <!-- <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p> -->
+          <a
+            href="http://localhost/Blood_Bank_Management_System/Cancel_Request/cancel_request.html"
+            class="btn btn-danger"
+            >Click here</a
+          >
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="/Blood_Bank_Management_System/images/main-gettyimages-485855783-1515512813.jpg"
+          height="230vh"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Your Medical Records</h5>
+          <p class="card-text">If you have any disease please enter here...</p>
+          <a
+            href="http://localhost/Blood_Bank_Management_System/Enter_Record/enter.html"
+            class="btn btn-primary"
+            >Click here</a
+          >
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="footer">
+        <p>
+          Copyright © 2024,Designed & Developed by Soutik Mondal, Dept. of CSE,
+          University of Calcutta. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

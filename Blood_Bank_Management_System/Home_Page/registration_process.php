@@ -111,7 +111,7 @@ $conn->close();
         <?php endif; ?>
     </div>
     <div class="go-home">
-        <a href="http://localhost/Blood_Bank_Management_System/Profile_Creation/login.html">Go to Login</a>
+        <a href="http://localhost/Blood_Bank_Management_System/Home_Page/Home_Page.html">Go to Login</a>
     </div>
 </div>
 

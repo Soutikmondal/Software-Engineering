@@ -14,10 +14,124 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <style>
+     
+      @media (width<800px) {
+  
+  #heading h1{
+    font-size: 16px;
+  }
+  #heading h2{
+    font-size: 10px;
+  }
+  #logo{
+    margin-top: 0px;
+    height: 30px;
+    width: 30px;
+    
+  }
+  #top{
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+#wb_logo{
+  width: 80px;
+  margin-right: 2px;
+  
+}
+#title_bar{
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+#title{
+  margin-left: 0%;
+  padding-left: 0;
+}
+#title a{
+  font-size: 14px;
+}
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 5px;
+  border: 1px solid brown;
+  border-radius: 5px;
+  padding: 1%;
+  height: 290px;
+}
+.slider-frame{
+  width: 200px;
+  height: 280px;
+}
+.slider-frame img{
+width: 200px;
+height: 270px;
+margin-top: 5px;
+}
+.login-container{
+  
+height: 260px;
+padding: 5px;
+
+}
+.login-container h2{
+  margin-top: 30px;
+  font-size: 20px;
+}
+.login-container label{
+font-size: 15px;
+}
+.login-container input{
+height: 20px;
+}
+#login-button{
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  font-size: 10px;
+}
+#features{
+  margin:2px 3px;
+}
+.icons a{
+  font-size: 10px;
+  margin-top: 1px;
+  padding: 0;
+}
+.icons{
+  margin-top: 1px;
+}
+#add{
+  width: 98%;
+  margin: 0;
+}
+#add img{
+  width: 360px;
+height: 250px;
+}
+.col-md-4{
+  display: none;
+}
+#footer{
+  padding: 5px;
+}
+#footer p{
+  font-size: 10px;
+  text-align: center;
+
+}
+  }
+    </style>
   </head>
   <body>
     <header>
-      <div id="WelcomeMessage" style="display: none">Welcome,abord</div>
+     
       <div id="top">
         <img
           id="logo"
@@ -38,12 +152,12 @@
       </div>
       <div id="title_bar">
         <ul id="title">
-          <a href="">Home</a>
-          <a href="">Dashboard</a>
-          <a href="">Contact Us</a>
-          <a href="">Manual</a>
+          <a href="#" onclick="Home_alert()">Home</a>
+
+          <a href="http://localhost/Blood_Bank_Management_System/Contact_Us/contact.html">Contact Us</a>
+          <a href="http://localhost/Blood_Bank_Management_System/Manual/manual.html">Manual</a>
           <a
-            href="http://localhost/Blood_Bank_Management_System/Profile_Creation/registration.html"
+            href="http://localhost/Blood_Bank_Management_System/Home_Page/registration.html"
             >Register</a
           >
         </ul>
@@ -56,7 +170,14 @@
     </header>
     <main>
       <div class="slider-frame">
-        <img src="" id="image" height="340" width="600" alt="" />
+        <img
+          src=""
+          id="image"
+          height="340"
+          width="600"
+          alt=""
+         
+        />
       </div>
 
       <div class="login-container">
@@ -69,26 +190,28 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
 
-          <button type="button" onclick="validateForm()" id="login-button">Login</button>
+          <button type="button" onclick="validateForm()" id="login-button">
+            Login
+          </button>
         </form>
       </div>
     </main>
     <div id="features">
       <div class="icons">
-        <i class="fa-solid fa-building fa-xl"></i>
-        <a href="">Search Blood Banks</a>
+        <i class="fa-solid fa-building fa-s"></i>
+        <a href="#" onclick="Home_alert()">Place Request</a>
       </div>
       <div class="icons">
-        <i class="fa-solid fa-person fa-xl"></i>
-        <a href="">Search Donors</a>
+        <i class="fa-solid fa-person fa-s"></i>
+        <a href="#" onclick="Home_alert()">Track Request</a>
       </div>
       <div class="icons">
-        <i class="fa-solid fa-droplet fa-xl"></i>
-        <a href="">Search Blood Groups</a>
+        <i class="fa-solid fa-book fa-s"></i>
+        <a href="#" onclick="Home_alert()">Medical Record</a>
       </div>
       <div class="icons">
-        <i class="fa-regular fa-registered fa-xl"></i>
-        <a href="">Donor Registration</a>
+        <i class="fa-solid fa-xmark fa-s"></i>
+        <a href="#" onclick="Home_alert()">Cancel Request</a>
       </div>
     </div>
     <div id="add">
@@ -181,19 +304,20 @@
       //   window.location.href = page;
       // }
       function validateForm() {
-      
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
 
-      if (username.trim() === "" || password.trim() === "") {
-          document.getElementById("errorMessage").innerHTML = "Please enter both username and password.";
-      } else {
+        if (username.trim() === "" || password.trim() === "") {
+          document.getElementById("errorMessage").innerHTML =
+            "Please enter both username and password.";
+        } else {
           document.getElementById("loginForm").submit();
           show_alert();
-         
+        }
       }
-
-  }
+      function Home_alert() {
+        alert("Please login");
+      }
       function show_alert() {
         alert("Successfully logged in");
       }
@@ -203,8 +327,8 @@
       let image = document.getElementById("image");
       let images = [
         "/Blood_Bank_Management_System/images/2.png",
-        "/Blood_Bank_Management_System/images/3 .jpg",
-        "/Blood_Bank_Management_System/images/4 .jpg",
+        "/Blood_Bank_Management_System/images/1.jpg",
+        "/Blood_Bank_Management_System/images/3.webp",
       ];
       setInterval(function () {
         let random = Math.floor(Math.random() * 3);

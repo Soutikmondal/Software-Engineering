@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: rgb(255, 255, 255);
+          margin: 0;
+          padding: 0;
+        }
+        #top {
+          display: flex;
+          flex-direction: row;
+        }
+        #logo {
+          width: 7%;
+          height: 18%;
+          margin-right: 20px;
+          margin-top: 15px;
+          margin-left: 20px;
+        }
+        #wb_logo {
+          width: 10%;
+          margin-right: 20px;
+          margin-left: auto;
+        }
+        #heading {
+          margin-top: 15px;
+        }
+        #title_bar {
+          display: flex;
+          flex-direction: row;
+          background-color: red;
+          align-items: center;
+          margin: 5px;
+          border-radius: 5px;
+          justify-content: space-around;
+          align-items: center;
+          padding: 10px;
+        }
+  
+        #title_bar a {
+          padding: 0px 20px;
+          font-size: 16px;
+          color: #fff;
+          text-decoration: none;
+          font-family: Arial, Helvetica, sans-serif;
+          text-align: center;
+        }
+        #title_bar a:hover {
+          color: black;
+        }
+        #heading h1 {
+          color: red;
+          margin-bottom: 0px;
+         
+        }
+        #heading h2 {
+          font-weight: normal;
+          margin-top: 10px;
+        }
+  
+       /* Manual */
+       #manual{
+        margin: 0.5rem;
+        height: 60vh;
+       }
+  
+        /* FOOTER */
+        #footer {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          background-color: red;
+          border-radius: 5px;
+          margin: 2px;
+        }
+        #footer p {
+          color: white;
+        }
+  
+  
+        /* RESPONSIVE */
+        @media (width<800px) {
+    
+    #heading h1{
+      font-size: 20px;
+    }
+    #heading h2{
+      font-size: 10px;
+    }
+    #logo{
+      margin-top: 0px;
+      height: 40px;
+      width: 40px;
+      
+    }
+    #top{
+      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+  #wb_logo{
+    width: 80px;
+    margin-right: 2px;
+    
+  }
+  #title_bar{
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+  #title{
+    margin-left: 0%;
+    padding-left: 0;
+  }
+  #title a{
+    font-size: 14px;
+  }
+ 
+  #footer{
+    padding: 5px;
+  }
+  #footer p{
+    font-size: 10px;
+    text-align: center;
+  margin-bottom: 0;
+  }
+    }
+      </style>
+</head>
+<body>
+    <header>
+        <div id="top">
+          <img
+            id="logo"
+            src="/Blood_Bank_Management_System/images/blood_logo.png"
+            alt="Error"
+          />
+  
+          <div id="heading">
+            <h1>Blood Bank Management System</h1>
+            <h2>Government of West Bengal</h2>
+          </div>
+  
+          <img
+            id="wb_logo"
+            src="/Blood_Bank_Management_System/images/wb_logo.png"
+            alt="Error"
+          />
+        </div>
+        <div id="title_bar">
+          <a
+            href=""
+            style="
+              background-color: rgb(53, 85, 230);
+              border-radius: 10px;
+              padding: 5px 5px;
+            "
+            >Home</a
+          >
+  
+          <a href="http://localhost/Blood_Bank_Management_System/Contact_Us/contact.html">Contact Us</a>
+          <a href=""style="
+          background-color: rgb(53, 85, 230);
+          border-radius: 10px;
+          padding: 5px 5px;
+        ">Manual</a>
+          <a
+            href="http://localhost/Blood_Bank_Management_System/Home_Page/Landing_Page.html"
+            >Logout</a
+          >
+        </div>
+      </header>
+      <div id="manual">
+        <p>Will be updated soon...</p>
+      </div>
+      <footer>
+        <div id="footer">
+          <p>
+            Copyright © 2024,Designed & Developed by Soutik Mondal, Dept. of CSE,
+            University of Calcutta. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
+</body>
+</html>

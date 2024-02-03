@@ -22,8 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($result) {
         // Login successful
-        header('Content-Type: application/json');
-        echo json_encode(array('success' => $success));
+        session_start();
+        $_SESSION['RID'] = $result['RID']; 
+        $_SESSION['username'] = $username;
+        header("Location: http://localhost/Blood_Bank_Management_System/Home_Page/Home_Page.html"); // Redirect to the home page
+        exit();
     }
 }
 
